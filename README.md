@@ -4,7 +4,7 @@
 
 ### Team Members
 -Osborn Sun
-
+-Shivanshu Rajeev
 ---
 
 ## Project Description
@@ -22,6 +22,7 @@ Sports analytics (NBA). The application pulls real NBA data from an external API
 As a basketball fan, I want to enter an NBA team's name and a season year so that I can see a summary of that team's performance that season in a clean table.
 
 ### User Story 2
+As a basketball fan, I want to enter the names of two competing teams and the date of their match so that I can view each team's predicted probability of winning.
 
 ### User Story 3
 
@@ -47,7 +48,22 @@ Main success scenario:
 4. The system requests that team's games for the chosen season.
 5. The system displays the summary in a table.
 
-### Use Case 2
+### Use Case 2 - Predict Match Outcome (Shivanshu Rajeev)
+Name: Predict match outcome
+
+Primary actor: User
+
+Preconditions: The application is running and the API key is configured and properly returns data.
+
+Trigger: The user clicks Predict after entering two competing team names and selecting a match date.
+
+Main success scenario:
+1. The user enters the names of two competing teams and selects the date of their match.
+2. The user clicks Predict.
+3. The system looks up both teams in the API to retrieve their team IDs.
+4. The system retrieves relevant team statistics and historical performance data.
+5. The system calculates the predicted probability of each team winning.
+6. The system displays both teams' predicted win probabilities to the user.
 
 ### Use Case 3
 
@@ -60,16 +76,34 @@ Main success scenario:
 | Team Member | MVP Use Case |
 |-------------|--------------|
 | Osborn Sun | Search Team Season Stats (interactor, controller, presenter, and the Team Stats view with its results table) |
-| Name | Use Case |
+| Shivanshu Rajeev | Predict Match Outcome (interactor, controller, presenter, and the Match Prediction view displaying each team's predicted win probability) |
 | Name | Use Case |
 
 ---
 
 ## Entities
 
-### Entity 1
+### Entity 1 – Team
+Represents a basketball team participating in a match.
 
-### Entity 2
+Attributes:
+- Team ID
+- Team name
+
+### Entity 2 – MatchPrediction
+Represents the predicted outcome of a match between two basketball teams.
+
+Attributes:
+- Home team
+- Away team
+- Match date
+- Home team win probability
+- Away team win probability
+Responsibilities:
+- Store the two competing teams and their predicted win probabilities.
+- Ensure the probabilities are valid (between 0 and 1).
+- Represent the prediction results returned by the prediction algorithm.
+
 
 (Add additional entities as needed.)
 

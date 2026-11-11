@@ -24,9 +24,8 @@ As a basketball fan, I want to enter an NBA team's name and a season year so tha
 ### User Story 2
 As a basketball fan, I want to enter the names of two competing teams and the date of their match so that I can view each team's predicted probability of winning.
 
-### User Story 3
-
-(Add additional user stories as needed.)
+### User Story 3 (Quinton Gao)
+As a basketball fan, I want to enter the names of two competing teams so I can view the potential MVP for their next matchup.
 
 ---
 
@@ -65,7 +64,24 @@ Main success scenario:
 5. The system calculates the predicted probability of each team winning.
 6. The system displays both teams' predicted win probabilities to the user.
 
-### Use Case 3
+### Use Case 3 - Predict Next Most Valuable Player (Quinton Gao)
+Name: Predict next MVP
+
+Primary actor: User
+
+Preconditions: The application is running and the API key is configured and properly returns data.
+
+Trigger: The user clicks Find MVP after entering the names of two teams.
+
+Main success scenario:
+
+1. The user enters the names of two teams.
+2. The user clicks Find MVP.
+3. The system looks up both teams in the API to retrieve their team IDs.
+4. The system finds the next scheduled game between the two teams. 
+5. The system retrieves the per-game player statistics for both teams for the current season.
+6. The system calculates the predicted player with the highest points for next game.
+7. The system displays the date of the next matchup, the potential MVP’s name, team, and points per game.
 
 (Add additional use cases as needed.)
 
@@ -77,6 +93,7 @@ Main success scenario:
 |-------------|--------------|
 | Osborn Sun | Search Team Season Stats (interactor, controller, presenter, and the Team Stats view with its results table) |
 | Shivanshu Rajeev | Predict Match Outcome (interactor, controller, presenter, and the Match Prediction view displaying each team's predicted win probability) |
+| Quinton Gao | Predict next MVP (interactor, controller, presenter, and the MVP Prediction view displaying the next match's date, the potential MVP) |
 | Name | Use Case |
 
 ---
@@ -104,6 +121,19 @@ Responsibilities:
 - Ensure the probabilities are valid (between 0 and 1).
 - Represent the prediction results returned by the prediction algorithm.
 
+### Entity 3 - MVP_Prediction
+Represents the predicted MVP for the next matchup between two basketball teams.
+
+Attributes:
+- Player ID
+- Player name
+- Average points per game
+- Games played
+
+Responsibilities:
+- Store a player's scoring average for the current season.
+- Ensure the average is not negative and that at least one game has been played
+- Store the upcoming game, the chosen MVP, and the top-scoring candidates.
 
 (Add additional entities as needed.)
 

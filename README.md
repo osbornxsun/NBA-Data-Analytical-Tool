@@ -27,6 +27,9 @@ As a basketball fan, I want to enter the names of two competing teams and the da
 ### User Story 3 (Quinton Gao)
 As a basketball fan, I want to enter the names of two competing teams so I can view the potential MVP for their next matchup.
 
+### User Story 4 - Player Card Comparison (Lankai Yang)
+As a basketball fan, I want to enter the names of two NBA players and a season year so that I can see both players' season averages side by side on player cards, with the better value in each stat highlighted.
+
 ---
 
 ## Use Cases
@@ -83,6 +86,24 @@ Main success scenario:
 6. The system calculates the predicted player with the highest points for next game.
 7. The system displays the date of the next matchup, the potential MVP’s name, team, and points per game.
 
+### Use Case 4 - Compare Player Cards (Lankai Yang)
+Name: Compare player cards
+
+Primary actor: User
+
+Preconditions: The application is running and the API key is configured and properly returns data.
+
+Trigger: The user clicks Compare after entering two player names and a season year.
+
+Main success scenario:
+1. The user enters the names of two players and a season year.
+2. The user clicks Compare.
+3. The system searches the API for each player to get the player ID.
+4. The system requests each player's game statistics for that season.
+5. The system calculates each player's per-game averages (PTS, REB, AST, STL, BLK, FG%, 3P%).
+6. The system creates a player card for each player and decides who leads in each stat.
+7. The system displays the two cards side by side and highlights the leader in each stat.
+
 (Add additional use cases as needed.)
 
 ---
@@ -94,6 +115,7 @@ Main success scenario:
 | Osborn Sun | Search Team Season Stats (interactor, controller, presenter, and the Team Stats view with its results table) |
 | Shivanshu Rajeev | Predict Match Outcome (interactor, controller, presenter, and the Match Prediction view displaying each team's predicted win probability) |
 | Quinton Gao | Predict next MVP (interactor, controller, presenter, and the MVP Prediction view displaying the next match's date, the potential MVP) |
+| Lankai Yang | Compare Player Cards (interactor, controller, presenter, and the Player Card view showing two cards side by side with the leading stat highlighted) |
 | Name | Use Case |
 
 ---
@@ -134,6 +156,18 @@ Responsibilities:
 - Store a player's scoring average for the current season.
 - Ensure the average is not negative and that at least one game has been played
 - Store the upcoming game, the chosen MVP, and the top-scoring candidates.
+
+### Entity 4 – PlayerCard
+Represents one player's season averages.
+
+Attributes:
+- Player ID, player name, team name, season
+- Games played
+- Per-game stats: PTS, REB, AST, STL, BLK, FG%, 3P%
+
+Responsibilities:
+- Ensure games played ≥ 1, averages are non-negative, and percentages are between 0 and 100.
+- Compare with another PlayerCard and report which player leads in each stat.
 
 (Add additional entities as needed.)
 

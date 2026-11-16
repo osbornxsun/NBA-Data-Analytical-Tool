@@ -5,6 +5,7 @@
 ### Team Members
 -Osborn Sun
 -Shivanshu Rajeev
+-Jiahong Zheng
 ---
 
 ## Project Description
@@ -27,6 +28,8 @@ As a basketball fan, I want to enter the names of two competing teams and the da
 ### User Story 3 (Quinton Gao)
 As a basketball fan, I want to enter the names of two competing teams so I can view the potential MVP for their next matchup.
 
+### User Story 4 - Match Statistics (Jiahong Zheng)
+As a basketball fan, I want to select a completed NBA game and view both teams' statistics so that I can compare their performances and understand the outcome of the match.
 ---
 
 ## Use Cases
@@ -85,6 +88,31 @@ Main success scenario:
 
 (Add additional use cases as needed.)
 
+### Use Case 4 - View Match Statistics (Jiahong Zheng)
+
+Name: View match statistics
+
+Primary actor: User
+
+Preconditions: The application is running, the API key is configured, and completed NBA game data is available.
+
+Trigger: The user selects a completed NBA game from the list of games.
+
+Main success scenario:
+
+1. The user selects an NBA team and a season year.
+2. The system retrieves completed games involving the selected team for that season.
+3. The system displays a list of completed games.
+4. The user selects a game from the list.
+5. The system retrieves the selected game's information and team statistics using its game ID.
+6. The system displays the final score, quarter-by-quarter scores, and both teams' statistics, including rebounds, assists, steals, blocks, turnovers, and shooting percentages.
+7. The user can explore the game statistics through tables and comparison charts.
+
+Alternative scenarios:
+
+- If no completed games are found, the system displays an appropriate message.
+- If the selected game's statistics are unavailable, the system informs the user.
+- If the API request fails, the system displays an error message instead of invalid data.
 ---
 
 ## Minimal Viable Product (MVP)
@@ -94,7 +122,7 @@ Main success scenario:
 | Osborn Sun | Search Team Season Stats (interactor, controller, presenter, and the Team Stats view with its results table) |
 | Shivanshu Rajeev | Predict Match Outcome (interactor, controller, presenter, and the Match Prediction view displaying each team's predicted win probability) |
 | Quinton Gao | Predict next MVP (interactor, controller, presenter, and the MVP Prediction view displaying the next match's date, the potential MVP) |
-| Name | Use Case |
+| Jiahong Zheng | View Match Statistics (interactor, controller, presenter, and the Match Statistics view displaying completed games, scores, and team statistics) |
 
 ---
 
@@ -135,8 +163,51 @@ Responsibilities:
 - Ensure the average is not negative and that at least one game has been played
 - Store the upcoming game, the chosen MVP, and the top-scoring candidates.
 
-(Add additional entities as needed.)
 
+### Entity 4 - Game
+
+Represents a completed NBA game between two basketball teams.
+
+Attributes:
+- Game ID
+- Home team
+- Away team
+- Game date
+- Game status
+- Home team final score
+- Away team final score
+- Home team quarter-by-quarter scores
+- Away team quarter-by-quarter scores
+
+Responsibilities:
+- Store information about an NBA game.
+- Determine whether the game has been completed.
+- Identify the winning team based on the final scores.
+- Provide game information and quarter-by-quarter results.
+
+### Entity 5 - GameStats
+
+Represents one team's statistical performance in a specific NBA game.
+
+Attributes:
+- Game ID
+- Team ID
+- Points
+- Total rebounds
+- Assists
+- Steals
+- Blocks
+- Turnovers
+- Field goal percentage
+- Three-point percentage
+- Free throw percentage
+
+Responsibilities:
+- Store a team's statistical performance in a particular game.
+- Provide statistical data that can be used by other components for comparison and visualization.
+- Represent unavailable statistics appropriately.
+
+(Add additional entities as needed.)
 ---
 
 ## API Usage

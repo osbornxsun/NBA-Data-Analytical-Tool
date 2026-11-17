@@ -11,72 +11,72 @@ package entity;
 
 public class SeasonTeamStats {
   // Scoring
-  private final int points;
-  private final int fastBreakPoints;
-  private final int pointsInPaint;
-  private final int pointsOffTurnovers;
-  private final int secondChancePoints;
+  private final Integer points;
+  private final Integer fastBreakPoints;
+  private final Integer pointsInPaint;
+  private final Integer pointsOffTurnovers;
+  private final Integer secondChancePoints;
 
   // Field goals
-  private final int fieldGoalsMade;
-  private final int fieldGoalsAttempted;
-  private final double fieldGoalPercent;
+  private final Integer fieldGoalsMade;
+  private final Integer fieldGoalsAttempted;
+  private final Double fieldGoalPercent;
 
   // Free throws
-  private final int freeThrowsMade;
-  private final int freeThrowsAttempted;
-  private final double freeThrowPercent;
+  private final Integer freeThrowsMade;
+  private final Integer freeThrowsAttempted;
+  private final Double freeThrowPercent;
 
   // Three-pointers
-  private final int threePointersMade;
-  private final int threePointersAttempted;
-  private final double threePointPercent;
+  private final Integer threePointersMade;
+  private final Integer threePointersAttempted;
+  private final Double threePointPercent;
 
   // Rebounding
-  private final int offensiveRebounds;
-  private final int defensiveRebounds;
-  private final int totalRebounds;
+  private final Integer offensiveRebounds;
+  private final Integer defensiveRebounds;
+  private final Integer totalRebounds;
 
   // Other statistics
-  private final int assists;
-  private final int personalFouls;
-  private final int steals;
-  private final int turnovers;
-  private final int blocks;
-  private final int plusMinus;
+  private final Integer assists;
+  private final Integer personalFouls;
+  private final Integer steals;
+  private final Integer turnovers;
+  private final Integer blocks;
+  private final Integer plusMinus;
 
   // Additional contextual statistics
-  private final int gamesPlayed;
-  private final int biggestLead;
-  private final int longestRun;
+  private final Integer gamesPlayed;
+  private final Integer biggestLead;
+  private final Integer longestRun;
 
   public SeasonTeamStats(
-    int gamesPlayed,
-    int points,
-    int fastBreakPoints,
-    int pointsInPaint,
-    int pointsOffTurnovers,
-    int secondChancePoints,
-    int fieldGoalsMade,
-    int fieldGoalsAttempted,
-    double fieldGoalPercent,
-    int freeThrowsMade,
-    int freeThrowsAttempted,
-    double freeThrowPercent,
-    int threePointersMade,
-    int threePointersAttempted,
-    double threePointPercent,
-    int offensiveRebounds,
-    int defensiveRebounds,
-    int totalRebounds,
-    int assists,
-    int personalFouls,
-    int steals,
-    int turnovers,
-    int blocks,
-    int plusMinus,
-    int biggestLead,
-    int longestRun) {
+    Integer gamesPlayed,
+    Integer points,
+    Integer fastBreakPoints,
+    Integer pointsInPaint,
+    Integer pointsOffTurnovers,
+    Integer secondChancePoints,
+    Integer fieldGoalsMade,
+    Integer fieldGoalsAttempted,
+    Double fieldGoalPercent,
+    Integer freeThrowsMade,
+    Integer freeThrowsAttempted,
+    Double freeThrowPercent,
+    Integer threePointersMade,
+    Integer threePointersAttempted,
+    Double threePointPercent,
+    Integer offensiveRebounds,
+    Integer defensiveRebounds,
+    Integer totalRebounds,
+    Integer assists,
+    Integer personalFouls,
+    Integer steals,
+    Integer turnovers,
+    Integer blocks,
+    Integer plusMinus,
+    Integer biggestLead,
+    Integer longestRun) {
 
     this.gamesPlayed = gamesPlayed;
     this.points = points;
@@ -106,48 +106,48 @@ public class SeasonTeamStats {
     this.longestRun = longestRun;
   }
 
-  public int getGamesPlayed() { return gamesPlayed; }
+  public Integer getGamesPlayed() { return gamesPlayed; }
 
-  public int getPoints() { return points; }
-  public int getFastBreakPoints() { return fastBreakPoints; }
-  public int getPointsInPaint() { return pointsInPaint; }
-  public int getPointsOffTurnovers() { return pointsOffTurnovers; }
-  public int getSecondChancePoints() { return secondChancePoints; }
+  public Integer getPoints() { return points; }
+  public Integer getFastBreakPoints() { return fastBreakPoints; }
+  public Integer getPointsInPaint() { return pointsInPaint; }
+  public Integer getPointsOffTurnovers() { return pointsOffTurnovers; }
+  public Integer getSecondChancePoints() { return secondChancePoints; }
 
-  public int getFieldGoalsMade() { return fieldGoalsMade; }
-  public int getFieldGoalsAttempted() { return fieldGoalsAttempted; }
-  public double getFieldGoalPercent() { return fieldGoalPercent; }
+  public Integer getFieldGoalsMade() { return fieldGoalsMade; }
+  public Integer getFieldGoalsAttempted() { return fieldGoalsAttempted; }
+  public Double getFieldGoalPercent() { return fieldGoalPercent; }
 
-  public int getFreeThrowsMade() { return freeThrowsMade; }
-  public int getFreeThrowsAttempted() { return freeThrowsAttempted; }
-  public double getFreeThrowPercent() { return freeThrowPercent; }
+  public Integer getFreeThrowsMade() { return freeThrowsMade; }
+  public Integer getFreeThrowsAttempted() { return freeThrowsAttempted; }
+  public Double getFreeThrowPercent() { return freeThrowPercent; }
 
-  public int getThreePointersMade() { return threePointersMade; }
-  public int getThreePointersAttempted() { return threePointersAttempted; }
-  public double getThreePointPercent() { return threePointPercent; }
+  public Integer getThreePointersMade() { return threePointersMade; }
+  public Integer getThreePointersAttempted() { return threePointersAttempted; }
+  public Double getThreePointPercent() { return threePointPercent; }
 
-  public int getOffensiveRebounds() { return offensiveRebounds; }
-  public int getDefensiveRebounds() { return defensiveRebounds; }
-  public int getTotalRebounds() { return totalRebounds; }
+  public Integer getOffensiveRebounds() { return offensiveRebounds; }
+  public Integer getDefensiveRebounds() { return defensiveRebounds; }
+  public Integer getTotalRebounds() { return totalRebounds; }
 
-  public int getAssists() { return assists; }
-  public int getPersonalFouls() { return personalFouls; }
-  public int getSteals() { return steals; }
-  public int getTurnovers() { return turnovers; }
-  public int getBlocks() { return blocks; }
-  public int getPlusMinus() { return plusMinus; }
+  public Integer getAssists() { return assists; }
+  public Integer getPersonalFouls() { return personalFouls; }
+  public Integer getSteals() { return steals; }
+  public Integer getTurnovers() { return turnovers; }
+  public Integer getBlocks() { return blocks; }
+  public Integer getPlusMinus() { return plusMinus; }
 
-  public int getBiggestLead() { return biggestLead; }
-  public int getLongestRun() { return longestRun; }
+  public Integer getBiggestLead() { return biggestLead; }
+  public Integer getLongestRun() { return longestRun; }
 
   /**
    * Returns a per-game average, or null if the required data is unavailable.
    */
-  private double perGame(int total) {
-    if (gamesPlayed == 0) {
-      return 0;
+  private Double perGame(Integer total) {
+    if (gamesPlayed == 0 || total == null || gamesPlayed == null) {
+      return null;
     }
-    return (double) total / gamesPlayed;
+    return (double) (total / gamesPlayed);
   }
 
 }

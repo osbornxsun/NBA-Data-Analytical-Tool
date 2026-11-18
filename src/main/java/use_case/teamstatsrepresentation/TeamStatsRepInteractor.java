@@ -33,7 +33,7 @@
                     return;
                 }
 
-                TeamStats stats = teamStatsDAO.getTeamStats(team.getId(), season);
+                SeasonTeamStats stats = teamStatsDAO.getSeasonTeamStats(team.getId(), season);
                 if (stats == null) {
                     presenter.prepareFailView("No stats for " + team.getName() + " in " + season + ".");
                     return;

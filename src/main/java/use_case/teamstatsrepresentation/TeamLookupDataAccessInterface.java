@@ -1,4 +1,4 @@
-package use_case.TeamStatsRepresentation;
+package use_case.teamstatsrepresentation;
 
 public interface TeamLookupDataAccessInterface {
 

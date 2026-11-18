@@ -1,6 +1,8 @@
     package use_case.teamstatsrepresentation;
 
-    public class TeamStatsRepInteractor {
+
+
+    public class TeamStatsRepInteractor implements TeamStatsRepInputBoundary{
 
         private TeamStatsRepOutputBoundary presenter;
         private TeamStatsRepDataAccessInterface teamStatsDAO;

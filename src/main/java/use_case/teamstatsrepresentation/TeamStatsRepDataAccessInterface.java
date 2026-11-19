@@ -1,10 +1,10 @@
 package use_case.teamstatsrepresentation;
 
-import entity.SeasonTeamStats;
+import entity.SeasonTeam;
 
 public interface TeamStatsRepDataAccessInterface {
 
-    SeasonTeamStats getSeasonTeamStats(int teamId, int season) throws DataAccessException;
+    SeasonTeam getSeasonTeam(String teamName, int season) throws DataAccessException;
 
 
 }

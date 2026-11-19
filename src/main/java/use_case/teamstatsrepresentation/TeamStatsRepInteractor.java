@@ -8,20 +8,18 @@
 
         private final TeamStatsRepOutputBoundary presenter;
         private final TeamStatsRepDataAccessInterface teamStatsDAO;
-        private final TeamLookupDataAccessInterface teamLookupDAO;
 
-        public TeamStatsRepInteractor(TeamLookupDataAccessInterface teamLookupDAO,
-                                      TeamStatsRepDataAccessInterface teamStatsDAO,
+        public TeamStatsRepInteractor (TeamStatsRepDataAccessInterface teamStatsDAO,
                                       TeamStatsRepOutputBoundary presenter) {
-            this.teamLookupDAO = teamLookupDAO;
             this.teamStatsDAO = teamStatsDAO;
             this.presenter = presenter;
         }
 
-        private TeamStatsRepOutputData toOutputData(SeasonTeam team, SeasonTeamStats stats, int season) {
+        private TeamStatsRepOutputData toOutputData(SeasonTeam team) {
+            SeasonTeamStats stats = team.getStats();
             return new TeamStatsRepOutputData(
                     team.getName(),
-                    season,
+                    team.getSeason(),
                     stats.getGamesPlayed(),
                     stats.getPoints(),
                     stats.getFastBreakPoints(),
@@ -61,22 +59,16 @@
             }
 
             try {
-                SeasonTeam team = teamLookupDAO.getTeamByName(teamName);
+                SeasonTeam team = teamStatsDAO.getSeasonTeam(teamName, season);
                 if (team == null) {
                     presenter.prepareFailView("Team \"" + teamName + "\" not found.");
                     return;
                 }
 
-                SeasonTeamStats stats = teamStatsDAO.getSeasonTeamStats(team.getId(), season);
-                if (stats == null) {
-                    presenter.prepareFailView("No stats for " + team.getName() + " in " + season + ".");
-                    return;
-                }
-
-                TeamStatsRepOutputData outputData = toOutputData(team, stats, season);
+                TeamStatsRepOutputData outputData = toOutputData(team);
                 presenter.prepareSuccessView(outputData);
 
-            } catch (DataAccessException e) {   // your own exception, thrown by the API DAO
+            } catch (DataAccessException e) {
                 presenter.prepareFailView("Could not load data: " + e.getMessage());
             }
         }

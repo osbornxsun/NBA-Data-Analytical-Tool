@@ -1,7 +1,9 @@
 package use_case.teamstatsrepresentation;
 
+import entity.SeasonTeam;
+
 public interface TeamLookupDataAccessInterface {
 
 
-    Team getTeamByName(String teamName) throws DataAccessException;
+    SeasonTeam getTeamByName(String teamName) throws DataAccessException;
 }

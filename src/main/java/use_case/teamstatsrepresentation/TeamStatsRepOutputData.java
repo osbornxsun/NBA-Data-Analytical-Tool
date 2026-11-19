@@ -1,4 +1,123 @@
 package use_case.teamstatsrepresentation;
 
 public class TeamStatsRepOutputData {
+    private final String teamName;
+    private final int season;
+    private final Integer gamesPlayed;
+    private final Integer points;
+    private final Integer fastBreakPoints;
+    private final Integer pointsInPaint;
+    private final Integer pointsOffTurnovers;
+    private final Integer secondChancePoints;
+    private final Integer fieldGoalsMade;
+    private final Integer fieldGoalsAttempted;
+    private final Double fieldGoalPercent;
+    private final Integer freeThrowsMade;
+    private final Integer freeThrowsAttempted;
+    private final Double freeThrowPercent;
+    private final Integer threePointersMade;
+    private final Integer threePointersAttempted;
+    private final Double threePointPercent;
+    private final Integer offensiveRebounds;
+    private final Integer defensiveRebounds;
+    private final Integer totalRebounds;
+    private final Integer assists;
+    private final Integer personalFouls;
+    private final Integer steals;
+    private final Integer turnovers;
+    private final Integer blocks;
+    private final Integer plusMinus;
+    private final Integer biggestLead;
+    private final Integer longestRun;
+
+    //constructor (will refactor using builder later)
+    public TeamStatsRepOutputData(
+            String teamName,
+            int season,
+            Integer gamesPlayed,
+            Integer points,
+            Integer fastBreakPoints,
+            Integer pointsInPaint,
+            Integer pointsOffTurnovers,
+            Integer secondChancePoints,
+            Integer fieldGoalsMade,
+            Integer fieldGoalsAttempted,
+            Double fieldGoalPercent,
+            Integer freeThrowsMade,
+            Integer freeThrowsAttempted,
+            Double freeThrowPercent,
+            Integer threePointersMade,
+            Integer threePointersAttempted,
+            Double threePointPercent,
+            Integer offensiveRebounds,
+            Integer defensiveRebounds,
+            Integer totalRebounds,
+            Integer assists,
+            Integer personalFouls,
+            Integer steals,
+            Integer turnovers,
+            Integer blocks,
+            Integer plusMinus,
+            Integer biggestLead,
+            Integer longestRun) {
+        this.teamName = teamName;
+        this.season = season;
+        this.gamesPlayed = gamesPlayed;
+        this.points = points;
+        this.fastBreakPoints = fastBreakPoints;
+        this.pointsInPaint = pointsInPaint;
+        this.pointsOffTurnovers = pointsOffTurnovers;
+        this.secondChancePoints = secondChancePoints;
+        this.fieldGoalsMade = fieldGoalsMade;
+        this.fieldGoalsAttempted = fieldGoalsAttempted;
+        this.fieldGoalPercent = fieldGoalPercent;
+        this.freeThrowsMade = freeThrowsMade;
+        this.freeThrowsAttempted = freeThrowsAttempted;
+        this.freeThrowPercent = freeThrowPercent;
+        this.threePointersMade = threePointersMade;
+        this.threePointersAttempted = threePointersAttempted;
+        this.threePointPercent = threePointPercent;
+        this.offensiveRebounds = offensiveRebounds;
+        this.defensiveRebounds = defensiveRebounds;
+        this.totalRebounds = totalRebounds;
+        this.assists = assists;
+        this.personalFouls = personalFouls;
+        this.steals = steals;
+        this.turnovers = turnovers;
+        this.blocks = blocks;
+        this.plusMinus = plusMinus;
+        this.biggestLead = biggestLead;
+        this.longestRun = longestRun;
+    }
+
+        // methods
+    public String getTeamName() { return teamName; }
+    public int getSeason() { return season; }
+    public Integer getGamesPlayed() { return gamesPlayed; }
+    public Integer getPoints() { return points; }
+    public Integer getFastBreakPoints() { return fastBreakPoints; }
+    public Integer getPointsInPaint() { return pointsInPaint; }
+    public Integer getPointsOffTurnovers() { return pointsOffTurnovers; }
+    public Integer getSecondChancePoints() { return secondChancePoints; }
+    public Integer getFieldGoalsMade() { return fieldGoalsMade; }
+    public Integer getFieldGoalsAttempted() { return fieldGoalsAttempted; }
+    public Double getFieldGoalPercent() { return fieldGoalPercent; }
+    public Integer getFreeThrowsMade() { return freeThrowsMade; }
+    public Integer getFreeThrowsAttempted() { return freeThrowsAttempted; }
+    public Double getFreeThrowPercent() { return freeThrowPercent; }
+    public Integer getThreePointersMade() { return threePointersMade; }
+    public Integer getThreePointersAttempted() { return threePointersAttempted; }
+    public Double getThreePointPercent() { return threePointPercent; }
+    public Integer getOffensiveRebounds() { return offensiveRebounds; }
+    public Integer getDefensiveRebounds() { return defensiveRebounds; }
+    public Integer getTotalRebounds() { return totalRebounds; }
+    public Integer getAssists() { return assists; }
+    public Integer getPersonalFouls() { return personalFouls; }
+    public Integer getSteals() { return steals; }
+    public Integer getTurnovers() { return turnovers; }
+    public Integer getBlocks() { return blocks; }
+    public Integer getPlusMinus() { return plusMinus; }
+    public Integer getBiggestLead() { return biggestLead; }
+    public Integer getLongestRun() { return longestRun; }
 }
+

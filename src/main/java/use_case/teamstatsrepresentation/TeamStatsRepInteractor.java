@@ -1,12 +1,14 @@
     package use_case.teamstatsrepresentation;
 
 
+    import entity.SeasonTeam;
+    import entity.SeasonTeamStats;
 
     public class TeamStatsRepInteractor implements TeamStatsRepInputBoundary{
 
-        private TeamStatsRepOutputBoundary presenter;
-        private TeamStatsRepDataAccessInterface teamStatsDAO;
-        private TeamLookupDataAccessInterface teamLookupDAO;
+        private final TeamStatsRepOutputBoundary presenter;
+        private final TeamStatsRepDataAccessInterface teamStatsDAO;
+        private final TeamLookupDataAccessInterface teamLookupDAO;
 
         public TeamStatsRepInteractor(TeamLookupDataAccessInterface teamLookupDAO,
                                       TeamStatsRepDataAccessInterface teamStatsDAO,
@@ -14,6 +16,38 @@
             this.teamLookupDAO = teamLookupDAO;
             this.teamStatsDAO = teamStatsDAO;
             this.presenter = presenter;
+        }
+
+        private TeamStatsRepOutputData toOutputData(SeasonTeam team, SeasonTeamStats stats, int season) {
+            return new TeamStatsRepOutputData(
+                    team.getName(),
+                    season,
+                    stats.getGamesPlayed(),
+                    stats.getPoints(),
+                    stats.getFastBreakPoints(),
+                    stats.getPointsInPaint(),
+                    stats.getPointsOffTurnovers(),
+                    stats.getSecondChancePoints(),
+                    stats.getFieldGoalsMade(),
+                    stats.getFieldGoalsAttempted(),
+                    stats.getFieldGoalPercent(),
+                    stats.getFreeThrowsMade(),
+                    stats.getFreeThrowsAttempted(),
+                    stats.getFreeThrowPercent(),
+                    stats.getThreePointersMade(),
+                    stats.getThreePointersAttempted(),
+                    stats.getThreePointPercent(),
+                    stats.getOffensiveRebounds(),
+                    stats.getDefensiveRebounds(),
+                    stats.getTotalRebounds(),
+                    stats.getAssists(),
+                    stats.getPersonalFouls(),
+                    stats.getSteals(),
+                    stats.getTurnovers(),
+                    stats.getBlocks(),
+                    stats.getPlusMinus(),
+                    stats.getBiggestLead(),
+                    stats.getLongestRun());
         }
 
         @Override
@@ -27,7 +61,7 @@
             }
 
             try {
-                Team team = teamLookupDAO.getTeamByName(teamName);
+                SeasonTeam team = teamLookupDAO.getTeamByName(teamName);
                 if (team == null) {
                     presenter.prepareFailView("Team \"" + teamName + "\" not found.");
                     return;
@@ -39,10 +73,7 @@
                     return;
                 }
 
-                TeamStatsRepOutputData outputData = new TeamStatsRepOutputData(
-                        team.getName(), season,
-                        stats.getGamesPlayed(), stats.getWins(), stats.getLosses(),
-                        stats.getPointsPerGame());   // add more
+                TeamStatsRepOutputData outputData = toOutputData(team, stats, season);
                 presenter.prepareSuccessView(outputData);
 
             } catch (DataAccessException e) {   // your own exception, thrown by the API DAO

@@ -1,7 +1,7 @@
 package data_access.teamstatsrepresentation;
 
 
-import entity.Team;
+import entity.SeasonTeam;
 import entity.SeasonTeamStats;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -41,14 +41,9 @@ public class ApiTeamDataAccessObject implements TeamStatsRepDataAccessInterface,
     }
 
     @Override
-    public Team getTeamByName(String teamName) throws DataAccessException {
-        String name = URLEncoder.encode(teamName, StandardCharsets.UTF_8);
-        JSONArray teams = get("/teams?name=" + name);
-        if (teams.isEmpty()) {
-            return null;
-        }
-        JSONObject t = teams.getJSONObject(0);
-        return new Team(t.getInt("id"), t.getString("name"));
+    public SeasonTeam getTeamByName(String teamName) throws DataAccessException {
+        // TODO: refactor to getSeasonTeam(teamName, season) - SeasonTeam now needs stats
+        throw new DataAccessException("Not implemented yet", null);
     }
 
     @Override

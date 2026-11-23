@@ -1,6 +1,6 @@
 package use_case.predictMatchUseCase;
 
-import entity.prediction.MatchPrediction;
+import entity.MatchPrediction;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package use_case.predictMatchUseCase;
 
-import entity.prediction.StatFactor;
+import entity.predictionDecorators.StatFactor;
 
 import java.time.LocalDate;
 import java.util.Collections;

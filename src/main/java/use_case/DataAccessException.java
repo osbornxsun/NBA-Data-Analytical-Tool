@@ -1,4 +1,4 @@
-package use_case.teamstatsrepresentation;
+package use_case;
 
 public class DataAccessException extends Exception {
 

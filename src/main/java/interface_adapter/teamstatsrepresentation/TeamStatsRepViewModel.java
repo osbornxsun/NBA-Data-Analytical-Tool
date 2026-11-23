@@ -3,9 +3,7 @@ package interface_adapter.teamstatsrepresentation;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * The ViewModel for the Team Stats View.
- */
+
 public class TeamStatsRepViewModel {
 
     public static final String TITLE_LABEL = "Team Season Stats";

@@ -7,8 +7,6 @@ import use_case.teamstatsrepresentation.TeamStatsRepOutputBoundary;
 import use_case.teamstatsrepresentation.TeamStatsRepOutputData;
 
 /**
- * Presenter for the Team Stats Representation use case.
- *
  * <p>Turns the raw values in {@link TeamStatsRepOutputData} into display-ready text
  * (labels, "N/A" for missing stats, formatted percentages), stores them in the
  * view model's state, and notifies the view.</p>
@@ -19,11 +17,7 @@ public class TeamStatsRepPresenter implements TeamStatsRepOutputBoundary {
 
     private final TeamStatsRepViewModel viewModel;
 
-    /**
-     * Creates a presenter that updates the given view model.
-     *
-     * @param viewModel the view model for the team stats view
-     */
+
     public TeamStatsRepPresenter(TeamStatsRepViewModel viewModel) {
         this.viewModel = viewModel;
     }

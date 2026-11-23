@@ -3,6 +3,7 @@
 
     import entity.SeasonTeam;
     import entity.SeasonTeamStats;
+    import use_case.DataAccessException;
 
     public class TeamStatsRepInteractor implements TeamStatsRepInputBoundary{
 

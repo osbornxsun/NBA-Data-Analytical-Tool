@@ -2,7 +2,7 @@ package data_access;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
-import use_case.teamstatsrepresentation.DataAccessException;
+import use_case.DataAccessException;
 
 import java.net.URI;
 import java.net.http.HttpClient;

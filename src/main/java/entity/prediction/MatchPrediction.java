@@ -1,4 +1,4 @@
-package entity;
+package entity.prediction;
 
 import java.time.LocalDate;
 

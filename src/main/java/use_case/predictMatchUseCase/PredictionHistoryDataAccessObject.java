@@ -1,6 +1,6 @@
-package interface_adapter.predictMatchUseCase;
+package use_case.predictMatchUseCase;
 
-import entity.MatchPrediction;
+import entity.prediction.MatchPrediction;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

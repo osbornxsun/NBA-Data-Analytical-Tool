@@ -6,7 +6,7 @@ import entity.SeasonTeamStats;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.DataAccessException;
-import use_case.predictMatchUseCase.PredictMatchDataAccessInterface;
+import use_case.predict_match.PredictMatchDataAccessInterface;
 import use_case.teamstatsrepresentation.TeamStatsRepDataAccessInterface;
 
 

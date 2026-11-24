@@ -1,4 +1,4 @@
-package use_case.predictMatchUseCase;
+package use_case.predict_match;
 
 import entity.MatchPrediction;
 import org.json.JSONArray;

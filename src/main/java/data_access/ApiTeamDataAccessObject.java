@@ -6,10 +6,11 @@ import entity.SeasonTeamStats;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import use_case.DataAccessException;
+import use_case.predictMatchUseCase.PredictMatchDataAccessInterface;
 import use_case.teamstatsrepresentation.TeamStatsRepDataAccessInterface;
 
 
-public class ApiTeamDataAccessObject implements TeamStatsRepDataAccessInterface{
+public class ApiTeamDataAccessObject implements TeamStatsRepDataAccessInterface, PredictMatchDataAccessInterface {
 
     private final ApiClient api;
 

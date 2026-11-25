@@ -13,7 +13,7 @@ import java.net.http.HttpResponse;
 /**
  * Sends requests to API-NBA (api-sports.io). Shared by all DAOs that use this API.
  */
-public class ApiClient {
+public class ApiClient implements ApiGateway{
 
     private static final String BASE_URL = "https://v2.nba.api-sports.io";
 

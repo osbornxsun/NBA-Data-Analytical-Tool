@@ -12,9 +12,9 @@ import use_case.teamstatsrepresentation.TeamStatsRepDataAccessInterface;
 
 public class ApiTeamDataAccessObject implements TeamStatsRepDataAccessInterface, PredictMatchDataAccessInterface {
 
-    private final ApiClient api;
+    private final ApiGateway api;
 
-    public ApiTeamDataAccessObject(ApiClient api) {
+    public ApiTeamDataAccessObject(ApiGateway api) {
         this.api = api;
     }
 

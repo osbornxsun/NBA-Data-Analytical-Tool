@@ -1,10 +1,13 @@
 package use_case.match_statistics;
 
 import entity.Game;
+import entity.BoxScore;
 
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.Executor;
 
 /** Finds completed games for a team and season, ordered newest first. */
 public final class MatchStatisticsInteractor implements MatchStatisticsInputBoundary {
@@ -36,5 +39,17 @@ public final class MatchStatisticsInteractor implements MatchStatisticsInputBoun
                 .toList();
 
         presenter.prepareSuccessView(completedGames);
+    }
+
+    @Override
+    public void viewStatistics(int gameId, Executor delivery) {
+        Optional<BoxScore> score;
+        try {
+            score = dataAccess.getBoxScore(gameId);
+        } catch (IOException exception) {
+            score = Optional.empty();
+        }
+        Optional<BoxScore> result = score;
+        delivery.execute(() -> presenter.presentBoxScore(result));
     }
 }

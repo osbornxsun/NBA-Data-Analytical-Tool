@@ -1,0 +1,37 @@
+[
+  {
+    "id": 50,
+    "teams": {
+      "home": {
+        "id": 17,
+        "name": "Lakers"
+      },
+      "visitors": {
+        "id": 28,
+        "name": "Suns"
+      }
+    },
+    "scores": {
+      "home": {
+        "points": 108,
+        "linescore": [
+          "26",
+          "26",
+          "26",
+          "22",
+          "8"
+        ]
+      },
+      "visitors": {
+        "points": 105,
+        "linescore": [
+          25,
+          25,
+          25,
+          25,
+          5
+        ]
+      }
+    }
+  }
+]

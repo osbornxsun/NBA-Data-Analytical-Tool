@@ -4,6 +4,8 @@ import use_case.match_statistics.CompletedGameOutputData;
 import use_case.match_statistics.MatchStatisticsOutputBoundary;
 
 import java.util.List;
+import java.util.Optional;
+import entity.BoxScore;
 
 /** Converts game-search outcomes into updates for the view. */
 public final class MatchStatisticsPresenter implements MatchStatisticsOutputBoundary {
@@ -22,5 +24,11 @@ public final class MatchStatisticsPresenter implements MatchStatisticsOutputBoun
     @Override
     public void prepareFailView(String message) {
         viewModel.setResult(List.of(), message);
+    }
+
+    @Override
+    public void presentBoxScore(Optional<BoxScore> score) {
+        String message = score.isEmpty() ? "Statistics unavailable for this game." : "";
+        viewModel.setBoxScore(score, message);
     }
 }

@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
+import entity.BoxScore;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -73,6 +75,11 @@ class MatchStatisticsInteractorTest {
     private static final class RecordingPresenter implements MatchStatisticsOutputBoundary {
         private List<CompletedGameOutputData> completedGames;
         private String errorMessage;
+
+        @Override
+        public void presentBoxScore(Optional<BoxScore> score) {
+            throw new AssertionError("Unexpected box score during game search");
+        }
 
         @Override
         public void prepareSuccessView(List<CompletedGameOutputData> games) {

@@ -1,6 +1,10 @@
 package use_case.match_statistics;
 
-/** Allows the controller to request a list of completed games. */
+import java.util.concurrent.Executor;
+
+/** Requests completed games and presents box scores on the supplied delivery executor. */
 public interface MatchStatisticsInputBoundary {
     void execute(MatchStatisticsInputData inputData);
+
+    void viewStatistics(int gameId, Executor delivery);
 }

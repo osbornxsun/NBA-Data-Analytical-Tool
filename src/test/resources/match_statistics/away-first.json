@@ -1,0 +1,26 @@
+[
+  {
+    "team": {
+      "id": 28
+    },
+    "statistics": [
+      {
+        "totReb": 44,
+        "assists": 22,
+        "steals": 0
+      }
+    ]
+  },
+  {
+    "team": {
+      "id": 17
+    },
+    "statistics": [
+      {
+        "totReb": 40,
+        "assists": 17,
+        "steals": 6
+      }
+    ]
+  }
+]
